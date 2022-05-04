@@ -27,7 +27,9 @@ export default {
     methods:{
         changeTitle(title){
             // console.log(title)
-            this.title = title
+            this.title = title.toUpperCase()
+            console.log(title)
+            // this.$router.push(title)
         }
     }
 }

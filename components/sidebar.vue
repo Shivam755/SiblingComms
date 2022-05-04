@@ -4,7 +4,7 @@
             <NuxtLink @click="changeTitle('Home')" class="hover:bg-indigo-600 hover:underline p-4 md:p-6 xl:p-10" to="/">Home</NuxtLink>
             <NuxtLink @click="changeTitle('Hello')" class="hover:bg-indigo-600 hover:underline p-4 md:p-6 xl:p-10" to="/hello">Hello</NuxtLink>
             <NuxtLink @click="changeTitle('Demon')" class="hover:bg-indigo-600 hover:underline p-4 md:p-6 xl:p-10" to="/demon">Demon</NuxtLink>
-            <NuxtLink @click="changeTitle('About')" class="hover:bg-indigo-600 hover:underline p-4 md:p-6 xl:p-10" to="about">About</NuxtLink>
+            <NuxtLink @click="changeTitle('About')" class="hover:bg-indigo-600 hover:underline p-4 md:p-6 xl:p-10" to="/about">About</NuxtLink>
         </div>
         <button class="bg-indigo-800 text-indigo-50 md:h-16 md:w-16 h-10 w-10 p-2 xl:hidden" @click.prevent="changeIcon">
             <svg  class="md:w-12 md:h-12 w-6 h-6 xl:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -24,9 +24,8 @@ export default {
         changeIcon(){
             document.getElementById("navList").classList.toggle("hidden")
         },
-        changeTitle(title){
+        changeTitle(title){   
             this.$emit("change-title", title )
-            // this.$bus.$emit("change-title", title)
         }
     },
     created(){
@@ -37,7 +36,6 @@ export default {
         }else{
             this.changeTitle(pathArray[pathArray.length-1].toUpperCase())
         }
-        // changeTitle();
     }
 }
 </script>
